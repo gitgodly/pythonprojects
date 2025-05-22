@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notepad</title>
+</head>
+<body>
+    <h1>📝 My Notes</h1>
+    <a href="{{ url_for('add') }}">Add New Note</a>
+    <ul>
+        {% for note in notes %}
+            <li>
+                <strong>{{ note.title }}</strong> ({{ note.timestamp }})<br>
+                {{ note.content }}
+            </li>
+        {% else %}
+            <li>No notes yet.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
